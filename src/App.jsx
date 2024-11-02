@@ -93,7 +93,7 @@ function App() {
     { text: "    return 'Downloading resume...'", delay: 1.0 },
     { text: "  },", delay: 1.2 },
     { text: "  contact() {", delay: 1.4 },
-    { text: "    return 'tejeswar@example.com'", delay: 1.6 },
+    { text: "    return 'mbtejeshwarreddy@gmail.com'", delay: 1.6 },
     { text: "  }", delay: 1.8 },
     { text: "};", delay: 2.0 },
     { text: "", delay: 2.2 },
@@ -331,8 +331,8 @@ function App() {
                 <TimelineContent>
                   <Paper elevation={3} className="timeline-paper">
                     <span className="timeline-date">Jan 2020 - Sep 2022</span>
-                    <h3>Previous Company</h3>
-                    <p>Senior Developer</p>
+                    <h3>Datamatics</h3>
+                    <p>Consultant Software Engineer</p>
                     <p className="location">Location</p>
                   </Paper>
                 </TimelineContent>
@@ -345,8 +345,8 @@ function App() {
                 <TimelineContent>
                   <Paper elevation={3} className="timeline-paper">
                     <span className="timeline-date">Jun 2018 - Dec 2019</span>
-                    <h3>Another Company</h3>
-                    <p>Developer</p>
+                    <h3>Cognizant</h3>
+                    <p>Associate</p>
                     <p className="location">Location</p>
                   </Paper>
                 </TimelineContent>

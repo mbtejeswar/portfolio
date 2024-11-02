@@ -333,7 +333,7 @@ function App() {
                     <span className="timeline-date">Jan 2020 - Sep 2022</span>
                     <h3>Datamatics</h3>
                     <p>Consultant Software Engineer</p>
-                    <p className="location">Location</p>
+                    <p className="location">Bengaluru, India</p>
                   </Paper>
                 </TimelineContent>
               </TimelineItem>
@@ -347,7 +347,7 @@ function App() {
                     <span className="timeline-date">Jun 2018 - Dec 2019</span>
                     <h3>Cognizant</h3>
                     <p>Associate</p>
-                    <p className="location">Location</p>
+                    <p className="location">Chennai, India</p>
                   </Paper>
                 </TimelineContent>
               </TimelineItem>

@@ -63,6 +63,7 @@ function App() {
         "An intelligent chatbot solution revolutionizing ERP system interactions with AI-powered assistance, streamlining operations and providing instant access to critical information. The system features natural language processing for intuitive queries, automated data entry, and real-time insights generation.",
       technologies: ["Python", "TensorFlow", "NLP", "React", "Node.js"],
       align: "right",
+      githubLink: "https://github.com/ai-project-team-11/AI-Powered-ERP-System-for-FMCG-Company"
     },
     {
       id: 2,
@@ -72,6 +73,7 @@ function App() {
         "Real-time asset tracking system with live location monitoring, asset management, and historical data visualization. Implemented WebSocket for real-time updates and Mapbox for precise geographical visualization, enabling efficient tracking of company assets.",
       technologies: ["React.js", "Node.js", "Mapbox", "WebSocket", "MongoDB"],
       align: "left",
+      githubLink: "https://github.com/Crio-Winter-of-Doing-2021/JUMBOGPS-T12"
     },
     {
       id: 3,
@@ -80,9 +82,10 @@ function App() {
       description:
         "Dynamic dashboard for efficient results management featuring real-time analysis, custom reporting, and interactive charts for enhanced decision-making. Implemented robust state management and error handling for reliable performance.",
       technologies: ["React", "Redux", "Express.js", "MongoDB"],
-      align: "right",
+      align: "right"
     },
   ];
+
 
   const codeLines = [
     { text: "const teja = {", delay: 0 },
@@ -263,9 +266,8 @@ function App() {
                 {Object.entries(skillsData).map(([category, data]) => (
                   <motion.button
                     key={category}
-                    className={`category-btn ${
-                      activeCategory === category ? "active" : ""
-                    }`}
+                    className={`category-btn ${activeCategory === category ? "active" : ""
+                      }`}
                     onClick={() => setActiveCategory(category)}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -374,7 +376,6 @@ function App() {
               className="projects-header"
             >
               <h2>Notable Projects</h2>
-              <p>Enterprise solutions protected by NDAs</p>
             </motion.div>
 
             <div className="projects-timeline">
@@ -401,7 +402,20 @@ function App() {
                         </span>
                       ))}
                     </div>
+                    {project.githubLink && (
+                      <motion.a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-link"
+                        whileHover={{ y: -3 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <GitHubIcon /> View on GitHub <LaunchIcon fontSize="small" />
+                      </motion.a>
+                    )}
                   </div>
+
                 </motion.div>
               ))}
             </div>

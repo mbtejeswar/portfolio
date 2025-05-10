@@ -250,6 +250,7 @@ body {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
+  padding-bottom:20px;
 }
 
 .tech-tag {

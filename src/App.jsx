@@ -23,7 +23,7 @@ import PsychologyIcon from "@mui/icons-material/Psychology";
 
 function App() {
   const projectsRef = useRef(null);
-  const [activeCategory, setActiveCategory] = useState("DATABASES");
+  const [activeCategory, setActiveCategory] = useState("FRONTEND");
   const [command, setCommand] = useState("");
   const [output, setOutput] = useState("");
 
@@ -50,11 +50,21 @@ function App() {
     },
     "MACHINE LEARNING": {
       icon: <PsychologyIcon />,
-      skills: ["TensorFlow", "NumPy", "Pandas", "scikit-learn"],
+      skills: ["Streamlit", "NumPy", "Pandas", "TensorFlow"],
     },
   };
 
   const projects = [
+    {
+      id: 1,
+      title: "GPS Asset Tracking Dashboard",
+      period: "",
+      description:
+        "Real-time asset tracking system with live location monitoring, asset management, and historical data visualization. Implemented WebSocket for real-time updates and Mapbox for precise geographical visualization, enabling efficient tracking of company assets.",
+      technologies: ["React.js", "Node.js", "Mapbox", "WebSocket", "MongoDB"],
+      align: "right",
+      githubLink: "https://github.com/Crio-Winter-of-Doing-2021/JUMBOGPS-T12"
+    },
     {
       id: 1,
       title: "ERP Chatbot using AI/ML",
@@ -62,18 +72,8 @@ function App() {
       description:
         "An intelligent chatbot solution revolutionizing ERP system interactions with AI-powered assistance, streamlining operations and providing instant access to critical information. The system features natural language processing for intuitive queries, automated data entry, and real-time insights generation.",
       technologies: ["Python", "TensorFlow", "NLP", "React", "Node.js"],
-      align: "right",
-      githubLink: "https://github.com/ai-project-team-11/AI-Powered-ERP-System-for-FMCG-Company"
-    },
-    {
-      id: 2,
-      title: "GPS Asset Tracking Dashboard",
-      period: "",
-      description:
-        "Real-time asset tracking system with live location monitoring, asset management, and historical data visualization. Implemented WebSocket for real-time updates and Mapbox for precise geographical visualization, enabling efficient tracking of company assets.",
-      technologies: ["React.js", "Node.js", "Mapbox", "WebSocket", "MongoDB"],
       align: "left",
-      githubLink: "https://github.com/Crio-Winter-of-Doing-2021/JUMBOGPS-T12"
+      githubLink: "https://github.com/ai-project-team-11/AI-Powered-ERP-System-for-FMCG-Company"
     },
     {
       id: 3,
@@ -91,7 +91,7 @@ function App() {
     { text: "const teja = {", delay: 0 },
     { text: "  name: 'Tejeswar',", delay: 0.2 },
     { text: "  role: 'Frontend Engineer',", delay: 0.4 },
-    { text: "  skills: ['React', 'Node.js', 'AI/ML'],", delay: 0.6 },
+    { text: "  skills: ['React', 'Node.js', 'Java', 'Micro-Frontend'],", delay: 0.6 },
     { text: "  resume() {", delay: 0.8 },
     { text: "    return 'Downloading resume...'", delay: 1.0 },
     { text: "  },", delay: 1.2 },

@@ -62,7 +62,7 @@ function App() {
       description:
         "Real-time asset tracking system with live location monitoring, asset management, and historical data visualization. Implemented WebSocket for real-time updates and Mapbox for precise geographical visualization, enabling efficient tracking of company assets.",
       technologies: ["React.js", "Node.js", "Mapbox", "WebSocket", "MongoDB"],
-      align: "right",
+      align: "left",
       githubLink: "https://github.com/Crio-Winter-of-Doing-2021/JUMBOGPS-T12"
     },
     {
@@ -72,7 +72,7 @@ function App() {
       description:
         "An intelligent chatbot solution revolutionizing ERP system interactions with AI-powered assistance, streamlining operations and providing instant access to critical information. The system features natural language processing for intuitive queries, automated data entry, and real-time insights generation.",
       technologies: ["Python", "TensorFlow", "NLP", "React", "Node.js"],
-      align: "left",
+      align: "right",
       githubLink: "https://github.com/ai-project-team-11/AI-Powered-ERP-System-for-FMCG-Company"
     },
     {
@@ -82,7 +82,7 @@ function App() {
       description:
         "Dynamic dashboard for efficient results management featuring real-time analysis, custom reporting, and interactive charts for enhanced decision-making. Implemented robust state management and error handling for reliable performance.",
       technologies: ["React", "Redux", "Express.js", "MongoDB"],
-      align: "right"
+      align: "left"
     },
   ];
 

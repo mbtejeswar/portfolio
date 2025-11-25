@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -6,8 +6,61 @@ import EmailIcon from '@mui/icons-material/Email';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Hero = () => {
+  const [terminalInput, setTerminalInput] = useState('');
+  const [terminalHistory, setTerminalHistory] = useState([
+    { type: 'output', text: 'Welcome! Try: profile.resume(), profile.contact(), profile.skills()' }
+  ]);
+  const inputRef = useRef(null);
+
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const executeCommand = (cmd) => {
+    const command = cmd.trim();
+    const newHistory = [...terminalHistory, { type: 'input', text: `> ${command}` }];
+
+    switch (command) {
+      case 'profile.resume()':
+        newHistory.push({ type: 'output', text: 'Downloading resume...' });
+        setTerminalHistory(newHistory);
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = '/resume.pdf';
+        link.download = 'Tejeswar_Reddy_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        break;
+      case 'profile.contact()':
+        newHistory.push({ type: 'output', text: 'Email: mbtejeshwarreddy@gmail.com\nLinkedIn: linkedin.com/in/mbtejeswar' });
+        setTerminalHistory(newHistory);
+        break;
+      case 'profile.skills()':
+        newHistory.push({ type: 'output', text: '["Java", "Spring Boot", "React", "Microservices", "LangChain", "RAG"]' });
+        setTerminalHistory(newHistory);
+        break;
+      case 'clear':
+        setTerminalHistory([{ type: 'output', text: 'Welcome! Try: profile.resume(), profile.contact(), profile.skills()' }]);
+        break;
+      case 'help':
+        newHistory.push({
+          type: 'output',
+          text: 'Available commands:\n  profile.resume()  - Download resume\n  profile.contact() - View contact info\n  profile.skills()  - List skills\n  clear             - Clear terminal'
+        });
+        setTerminalHistory(newHistory);
+        break;
+      default:
+        newHistory.push({ type: 'error', text: `Command not found: ${command}. Type 'help' for available commands.` });
+        setTerminalHistory(newHistory);
+    }
+    setTerminalInput('');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      executeCommand(terminalInput);
+    }
   };
 
   return (
@@ -166,6 +219,34 @@ const Hero = () => {
 }`}
                 </code>
               </pre>
+            </div>
+            <div className="terminal">
+              <div className="terminal-header">
+                <span className="terminal-title">terminal</span>
+              </div>
+              <div className="terminal-body">
+                {terminalHistory.map((item, index) => (
+                  <div key={index} className={`terminal-line ${item.type}`}>
+                    {item.text.split('\n').map((line, i) => (
+                      <div key={i}>{line}</div>
+                    ))}
+                  </div>
+                ))}
+                <div className="terminal-input-line">
+                  <span className="terminal-prompt">&gt;</span>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={terminalInput}
+                    onChange={(e) => setTerminalInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="terminal-input"
+                    placeholder="profile.resume()"
+                    spellCheck="false"
+                    autoComplete="off"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

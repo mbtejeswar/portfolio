@@ -355,6 +355,78 @@ body {
   white-space: pre;
 }
 
+/* Terminal Styles */
+.terminal {
+  border-top: 1px solid var(--bg-tertiary);
+}
+
+.terminal-header {
+  background: var(--bg-tertiary);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-title {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.terminal-body {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.terminal-line {
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.terminal-line.input {
+  color: var(--text-secondary);
+}
+
+.terminal-line.output {
+  color: var(--accent);
+}
+
+.terminal-line.error {
+  color: #ff6b6b;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-prompt {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0;
+}
+
+.terminal-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;

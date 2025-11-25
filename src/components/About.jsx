@@ -46,7 +46,7 @@ const About = () => {
             <p>
               Currently at <strong>DBS Bank</strong>, I've led full-stack migrations that improved
               application load times by 65%, engineered CI/CD pipelines that reduced build times
-              by 80%, and developed an <strong>Autonomous RCA Agent using LangChain and RAG</strong>
+              by 80%, and developed an <strong>Autonomous RCA Agent using LangChain and RAG </strong>
               that reduced Mean Time to Resolution by 40%.
             </p>
             <p>

@@ -93,7 +93,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            M B Tejeswar Reddy
+            Tejeswar Reddy
           </motion.h1>
 
           <motion.h2
